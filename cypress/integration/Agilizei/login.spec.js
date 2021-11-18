@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import elemento from '../Agilizei/elementos-login'
+import elemento from '../../elementos/elementos-login'
 //**https://res.cloudinary.com/douy56nkf/image/upload/v1588127894/twitter-build/bvxmlgckusmrwyivsnzr.svg
 describe('Twitter clone - login', () => {
     Cypress.on("uncaught:exception", (err, runnable) => {
@@ -18,6 +18,8 @@ describe('Twitter clone - login', () => {
     it('login com usuario valido', () => { 
         cy.login()
         cy.visit('/');
+        cy.get(elemento.texto_do_tweet).type('Quero ser um dos maiores TesteQA, aprender o máximo possível para ajudar e fazer a diferença no mercado de TI')
+        cy.get(elemento.botao_tweet).should('be.visible').contains('Tweet').click();
     });
 
 });
