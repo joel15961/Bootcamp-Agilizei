@@ -15,7 +15,7 @@ describe('Twitter clone - login', () => {
             fixture: 'losango'
         }).as('cloud')
       });
-    it('login com usuario valido', () => { 
+    it('login com usuario valido e Tweet com usuario logado!', () => { 
         cy.login()
         cy.visit('/');
         cy.get(elemento.texto_do_tweet).type('Quero ser um dos maiores TesteQA, aprender o máximo possível para ajudar e fazer a diferença no mercado de TI')
